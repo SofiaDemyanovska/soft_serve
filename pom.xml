@@ -7,12 +7,22 @@
 	<name>OMS</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<distributionManagement>
+    		<repository>
+      			<uniqueVersion>false</uniqueVersion>
+      			<id>corp1</id>
+      			<name>Corporate Repository</name>
+      			<url>file:///usr/share/tomcat/webapps</url>
+      			<layout>default</layout>
+    		</repository>
+	</distributionManagement>
 	<properties>
 		<java-version>1.6</java-version>
 		<org.springframework-version>3.0.5.RELEASE</org.springframework-version>
 		<org.springframework.roo-version>1.0.2.RELEASE</org.springframework.roo-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -259,6 +269,7 @@
 				<configuration>
 					<source>${java-version}</source>
 					<target>${java-version}</target>
+                                        <encoding>Cp1252</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -354,7 +365,7 @@
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M5</version>
+    <!--<version>3.0.0-M5</version> -->
     <configuration>
     	<skipTests>true</skipTests>
     </configuration>
@@ -392,6 +403,22 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.0-beta-1</version>
 			</plugin>
+
+
+			<plugin>
+        			<groupId>org.apache.tomcat.maven</groupId>
+     				<artifactId>tomcat7-maven-plugin</artifactId>
+        			<version>2.2</version>
+        			<configuration>
+                			<url>http://10.26.1.251:8080/manager/text</url>
+                			<server>TomcatServer</server>
+                			<path>/OMS</path>
+        			</configuration>
+			</plugin>
+
+
+
+
 		</plugins>
 	</build>
 </project>
