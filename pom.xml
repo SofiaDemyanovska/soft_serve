@@ -7,7 +7,7 @@
 	<name>OMS</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<distributionManagement>
+	<!--<distributionManagement>
     		<repository>
       			<uniqueVersion>false</uniqueVersion>
       			<id>corp1</id>
@@ -15,7 +15,7 @@
       			<url>file:///usr/share/tomcat/webapps</url>
       			<layout>default</layout>
     		</repository>
-	</distributionManagement>
+	</distributionManagement>-->
 	<properties>
 		<java-version>1.6</java-version>
 		<org.springframework-version>3.0.5.RELEASE</org.springframework-version>
